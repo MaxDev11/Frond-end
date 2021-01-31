@@ -1,0 +1,24 @@
+body {
+    background-color: #0B090A;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 4rem;
+}
+ul li  {
+    padding-bottom: 1.8rem;
+}
+h1 {
+    font-size: 3rem;
+    color: #A4161A;
+}
+a {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F5F3F4;
+}
+a:hover {
+    color: #B1A7A6;
+}
