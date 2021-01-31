@@ -1,0 +1,16 @@
+body {
+    background-color: #081C15;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 4rem;
+}
+h1 {
+    font-size: 3rem;
+    color: #52B788;
+}
+a {
+    text-decoration: none;
+    color: #F5F3F4;
+}
