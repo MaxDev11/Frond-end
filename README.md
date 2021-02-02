@@ -1,2 +1,2 @@
-# Frond-end
-### HTML, CSS, JavaScript practice https://maxdev11.github.io/Frond-end
+# Front-end
+### HTML, CSS, JavaScript practice https://maxdev11.github.io/Front-end
