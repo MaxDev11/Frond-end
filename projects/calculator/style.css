@@ -1,16 +1,110 @@
-/* body {
-    background-color: #081C15;
+/* Main */
+html {
+    height: 100%;
 }
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 4rem;
+
+body {
+    background-color: black;
+    height: 100%;
+    margin: 0;
 }
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 10rem 25rem;
+    align-items: center;
+    justify-items: center;
+}
+
 h1 {
-    font-size: 3rem;
-    color: #52B788;
+    font-size: 4rem;
+    color: #55A630;
 }
-a {
-    text-decoration: none;
-    color: #F5F3F4;
-} */
+
+/* Table elements */
+table {
+    display: grid;
+}
+
+#result {
+    width: 21rem;
+    height: 4.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #55A630;
+    background-color: black;
+    border: solid 2px #55A630;
+    padding: 1rem;
+}
+
+#second_row td input,
+#third_row td input,
+#fourth_row td input,
+#firstCol, #secondCol, #thirdCol, #fourthCol {
+    width: 3.6rem;
+    height: 4.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2B9348;
+    background-color: black;
+    border: solid 2px #2B9348;
+}
+
+#solve {
+    width: 7.6rem;
+    height: 4.2rem;
+    font-size: 2.4rem;
+    color: #CAF0F8;
+    background-color: #55A630;
+    border: none;
+}
+
+#second_row td input:hover,
+#third_row td input:hover,
+#fourth_row td input:hover,
+#firstCol:hover, #secondCol:hover, 
+#thirdCol:hover, #fourthCol:hover {
+    opacity: 0.8;
+}
+
+#solve:hover {
+    opacity: 0.8;
+}
+
+
+/* Media */
+@media (max-width: 480px) {
+    .wrapper {
+        grid-template-rows: 20% 40%;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    #first_row {
+        text-align: center;
+    }
+    
+    #result {
+        width: 11.2rem;
+        height: 2.2rem;
+        font-size: 1.2rem;
+    }
+    
+    #second_row td input,
+    #third_row td input,
+    #fourth_row td input,
+    #firstCol, #secondCol, #thirdCol, #fourthCol {
+        width: 2rem;
+        height: 3rem;
+        font-size: 0.7rem;
+    }
+    
+    #solve {
+        width: 4.3rem;
+        height: 3rem;
+        font-size: 1.6rem;
+    }
+}

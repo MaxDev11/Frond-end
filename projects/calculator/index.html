@@ -13,7 +13,7 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <!-- <div class="wrapper">
+    <div class="wrapper">
         <header>
            <center>
                <h1>Calculator</h1>
@@ -21,11 +21,44 @@
         </header>
         <main>
             <center>
-                <form action="">
-                    <input type="text">
-                </form>
+                <table>
+                    <tr id="first_row">
+                        <td colspan="6"><input type="text" id="result"></td> 
+                    </tr>
+                    <tr id="second_row">
+                        <td><input type="button" value="7" onclick="addVal('7');"></td>
+                        <td><input type="button" value="8" onclick="addVal('8');"></td>
+                        <td><input type="button" value="9" onclick="addVal('9');"></td>
+                        <td><input type="button" value="/" onclick="addVal('/');"></td>
+                        <td><input type="button" value="B" onclick="delVal();"></td>
+                        <td><input type="button" value="C" onclick="clearVal();"></td>
+                    </tr>
+                    <tr id="third_row">
+                        <td><input type="button" value="4" onclick="addVal('4');"></td>
+                        <td><input type="button" value="5" onclick="addVal('5');"></td>
+                        <td><input type="button" value="6" onclick="addVal('6');"></td>
+                        <td><input type="button" value="*" onclick="addVal('*');"></td>
+                        <td><input type="button" value="(" onclick="addVal('(');"></td>
+                        <td><input type="button" value=")" onclick="addVal(')');"></td>
+                    </tr>
+                    <tr id="fourth_row">
+                        <td><input type="button" value="1" onclick="addVal('1');"></td>
+                        <td><input type="button" value="2" onclick="addVal('2');"></td>
+                        <td><input type="button" value="3" onclick="addVal('3');"></td>
+                        <td><input type="button" value="-" onclick="addVal('-');"></td>
+                        <td><input type="button" value="sqr" onclick="sqrVal();"></td>
+                        <td><input type="button" value="sqrt" onclick="sqrtVal();"></td>
+                    </tr>
+                    <tr id="fifth_row">
+                        <td><input type="button" value="0" id="firstCol" onclick="addVal('0')"></td>
+                        <td><input type="button" value="." id="secondCol" onclick="addVal('.')"></td>
+                        <td><input type="button" value="%" id="thirdCol" onclick="addVal('%')"></td>
+                        <td><input type="button" value="+" id="fourthCol" onclick="addVal('+')"></td>
+                        <td colspan="2"><input type="button" value="=" id="solve" onclick="solveVal();"></td>
+                    </tr>
+                </table>
             </center>
         </main>
-    </div> -->
+    </div>
 </body>
 </html>
