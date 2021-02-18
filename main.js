@@ -373,3 +373,17 @@
 //  try obj.toString() and obj.valueOf(), whatever exists.
 // 3. Otherwise if hint is "number" or "default"
 //  try obj.valueOf() and obj.toString(), whatever exists.
+
+
+
+
+/* DATA TYPES */
+/* ADVANCED WORKING WITH FUNCTIONS */
+/* OBJECT PROPERTIES CONFIGURATION */
+/* PROTOTYPES, INHERITANCE */
+/* CLASSES */
+/* ERROR HANDLING */
+/* PROMISES, ASYNC/AWAIT */
+/* GENERATORS, ADVANCED ITERATION */
+/* MODULES */
+/* MISCELLANEOUS */
