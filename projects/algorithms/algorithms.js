@@ -8,7 +8,7 @@ function computeFactorial() {
         factorialOutput *= i;
     }
     
-    alert(factorialOutput.toString());
+    alert("!" + factorialInput + " = " + factorialOutput.toString());
 }
 
 // Factorial (Recursive function)

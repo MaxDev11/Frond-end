@@ -3,7 +3,7 @@
 
 
 
-/* JAVASCRIPT FUNDAMENTALS */
+/* PART 1 | JAVASCRIPT FUNDAMENTALS */
 
 /* Code Structure */
 // Statements, Semicolons, Comments
@@ -387,3 +387,9 @@
 /* GENERATORS, ADVANCED ITERATION */
 /* MODULES */
 /* MISCELLANEOUS */
+
+
+
+
+/* PART 2 | BROWSER: DOCUMENT, EVENTS, INTERFACES */
+/* PART 3 | ADDITIONAL ARTICLES */
