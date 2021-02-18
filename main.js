@@ -163,6 +163,7 @@
 
 
 /* CODE QUALITY */
+
 /* Debugging in browser's console */
 // Console.log(...);
 
@@ -192,3 +193,183 @@
 
 
 /* OBJECTS: THE BASICS */
+
+/* Objects */
+// Objects are used to store keyed collections of various data
+// and more complex entities.
+
+// In JS, objects penetrate almost every aspect of the language.
+
+// An object can be created with figure brackets { ... }
+// with an optional list of properties.
+// Ap roperty is a "key: value" pair
+
+// let user = new Object(); "object constructor" syntax
+// let user = {}; "object literal" syntax
+
+// let user {
+//     name: "John",
+//     age: 30,
+// };
+
+// Property values accessibility user.name, user.age
+// Deletion delete user.age;
+// Square brackets user["likes birds"] = true
+// Computed properties let name = ..., [name]: 5;
+// Property value shorthand
+// function makeUser(name, age) {
+//     return {
+//         name: name,
+//         age: age,
+//         ...,
+//     };
+// }
+// "In" operator
+// let user { name: "JOhn", };
+// alert( "name" in user );
+// for (key in object) ...
+
+// There are many other kinds of objects in JS
+// Array, Date, Error, Plain, etc.
+
+
+
+/* Object references and copying */
+// Copying, Comparison by reference
+
+// Cloning and merging, Object.assign
+// Copying an object var creates one more reference unlike cloning
+// let clone = {};
+// for (let key in user) {
+//     clone[key] = user[key];
+// }
+// Also we can us the method Object.assign for that
+// Objet.assign(dest, [src1, src2, src3...])
+// Object.assign(user, permissions1, permission2)
+
+
+
+/* Garbage collection */
+// Memory management in JS is performed automatically
+// and invisibly to us.
+
+// The main comcept of memory management in JS is reachability.
+// Simply put, "reachable" values are those that are
+// accessible or usable somehow.
+// They're guaranteed to be stored in memory.
+
+// Interlinked objects
+
+// The basic garbage collection algorithm is called "mark-and-sweep"
+// Some of the optimizations
+// General c., Incremental c., Idle-time c.
+
+
+
+/* Object methods, "this" */
+// Object.method, functions that are stored in object properties.
+
+// When we write our code using obects to represent entities,
+// that's called OOP. OOP is a programming paradigm.
+
+// "this" in methods
+// to access the object, a method can use the "this" keyword
+
+// "this" is not bound
+// In JS unlike most other PL, It can be used in any function, 
+// even if it's not a method of an object
+
+// Arrow functions have no "this"
+
+
+
+/* Constructor, operator "new" */
+// Often we need to create many similar objects,
+// that can be done using constructor functions and the "new" operator.
+
+// Construction function
+// 1. Named with capital letter first.
+// 2. Should be executed only with "new" operator.
+
+// When a function is executed with new:
+// 1. New empty object is created nad assigned to "this".
+// 2. The function body executes.
+// 3. The value of "this" is returned
+
+// Omitting parentheses, let user = new User;
+// Methods in constructor
+
+
+
+/* Optional chaining '?.' */
+// The optional chaining '?.' is a safe way to access nested
+// object properties, even if an intermediate property doesn't exist
+
+// Three forms of '?.'
+// 1. obj?.prop - returns obj.prop if obj exists. otherwise undefined.
+// 2. obj?.[prop] - returns obj[prop] if obj exists, otherwise undefined.
+// 3. obj.method?.() - calls obj.method() if obj.method exists,
+// otherwise returns undefined
+
+
+
+/* Symbol type */
+// A "symbol" represents a unique identifier
+// let id1 = Symbol("id");
+// let id2 = Symbol("id");
+// alert(id1 == id2); false
+
+// Symbols don't auto-convert to a string
+// symbol.description
+
+// Symbols allow us to create "hidden" properties of an object, 
+// that no other part of code can accidentally access or overwrite
+// let user = { name: "John" };
+// let id = Symbol("id");
+// user[id] = 1
+
+// Symbols are skipped by for...in
+
+// Global symbols
+// global symbol registry. We can create symbols in it and 
+// access them later, and it guarantees that repeated accesses
+// by the same name return exactly the same symbol.
+// In order to read a symbol from the registry, use Symbol.for(key)
+// Symbol,keyFor(sym) does the reverse: returns a name by a global symbol
+
+// System symbols
+// Symbol.hasInstance
+// Symbol.isConcatSpreadable
+// Symbol.iterator
+// Symbol.toPrimitive and so on
+
+
+
+/* Object to primitive conversion */
+// When Objects are obj1 + obj2 or obj1 - obj2 
+// or printed using alert(obj), they are auto-converted to primitives,
+// and then the operation is carried out.
+
+// 1. All objects are true in a bollean context.
+// 2. The numeric conversion happens when we subtract objects or
+// apply mathematical functions.
+// 3. The string conversions usually happen when we output an object
+// like alert(obj)
+
+// Symbol.toPrimitive
+// We can fine-tune string and numeric conversion, using speical object methods.
+// There are three variants of type conversion, so-called "hints":
+// 1. "string", for an object-to-string conversion, when we're doing an operation on an
+// objet that expects a string, like alert.
+// 2. "number", for an object-to-number conversion, like when we're doing maths
+// 3. "default", occurs in rare cases when the operator is "not sure"
+// what type to expect.
+
+// Further conversions
+
+// The conversions algorithm is:
+// 1. Call obj[Symbol.toPrimitive](hint) if the method exists,
+// 2. Otherwise if hint is "string"
+//  try obj.toString() and obj.valueOf(), whatever exists.
+// 3. Otherwise if hint is "number" or "default"
+//  try obj.valueOf() and obj.toString(), whatever exists.
