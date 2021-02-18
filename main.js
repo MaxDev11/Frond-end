@@ -2,6 +2,9 @@
 
 
 
+
+/* JAVASCRIPT FUNDAMENTALS */
+
 /* Code Structure */
 // Statements, Semicolons, Comments
 // alert("Hello, world!");
@@ -157,3 +160,35 @@
 // and prevent the visitor from interacting until they answer
 
 
+
+
+/* CODE QUALITY */
+/* Debugging in browser's console */
+// Console.log(...);
+
+
+
+/* Syntax */
+/* Comments */
+/* Ninja code */
+
+
+
+/* Automated testing with Mocha */
+// Behavior Driven Development (BDD)
+// BDD is tests AND documentation AND examples
+// Libraries for tests: Mocha, Chai, Sinon
+
+
+
+/* Polyfills and Transpilers */
+// Transpiler is a special piece of software that can parse
+// modern code, and rewrite it using older syntax
+
+// Polyfills is a script that updates/adds new functions
+// It "fills in" the gap and adds missimg implemenatations
+
+
+
+
+/* OBJECTS: THE BASICS */
