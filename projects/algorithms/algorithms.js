@@ -1,7 +1,10 @@
+// Source repository: https://github.com/trekhleb/javascript-algorithms
+
 // Factorial
 
 function computeFactorial() {
-    let factorialInput = +(prompt("Enter the factorial"));
+    let factorialInput = +(prompt("https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/factorial", 
+                                  "Enter the factorial"));
     let factorialOutput = 1;
 
     for (let i = 2; i <= factorialInput; i++) {
@@ -22,13 +25,29 @@ function computeFactorial() {
 // Fibonacci
 
 function computeFibonacci() {
-    let fibonacciInput = +(prompt("Enter the fibonacci"));
-    let fibonacciOutput = [];
+    let fibonacciInput = +(prompt("https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/fibonacci", 
+                                  "Enter the Fibonacci number"));
+    let fibonacciOutput = [0, 1];
+    let cValue = 1, pValue = 0;
 
-    for (let i = 0; i < fibonacciInput; i++) {
-        fibonacciOutput[i];
-        console.log(fibonacciOutput[i]);
+    if (fibonacciInput === 1) return fibonacciOutput;
+
+    for (; fibonacciInput > 1; fibonacciInput--) {
+        cValue += pValue;
+        pValue = cValue - pValue;
+
+        fibonacciOutput.push(cValue);
     }
-    
-    alert("Look in the console");
+
+    alert("Fibonacci sequence: " + fibonacciOutput);
 }
+
+// Prime Factors
+
+// function computePrimeF() {
+//     let primeFInput = +(prompt("https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/prime-factors", 
+//                                   "Enter the factorial"));
+//     let primeFOutput = [];
+
+//     if (primeFInput < 2) primeFOutput.push(0);
+// }

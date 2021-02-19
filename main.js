@@ -1,4 +1,4 @@
-/* Resource: javascript.info */
+/* Source: javascript.info */
 
 
 
