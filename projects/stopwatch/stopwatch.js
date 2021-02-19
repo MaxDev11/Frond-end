@@ -72,8 +72,10 @@ function stopWatchBtn() {
 
 function resetWatchBtn() {
     stopWatchBtn();
-    displayHours = 0;
-    displayMinutes = 0;
-    displaySeconds = 0;
-    time.innerHTML = displayHours + "0:" + displayMinutes + "0:0" + displaySeconds;
+
+    hours = 0;
+    minutes = 0;
+    seconds = 0;
+
+    time.innerHTML = "00:00:00";
 }

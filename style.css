@@ -1,12 +1,12 @@
 body {
     background-color: #0B090A;
 }
-ul {
+ol {
     list-style-type: none;
     padding: 0;
     margin-top: 4rem;
 }
-ul li  {
+ol li  {
     padding-bottom: 1.8rem;
 }
 h1 {
