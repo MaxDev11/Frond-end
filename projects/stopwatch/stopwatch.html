@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta and Title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="id=edge">
+    <meta name="author" content="Max">
+    <meta name="description" context="Created Stopwatch for JS practice">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Front-end, Stopwatch">
+    <title>Stopwatch</title>
+
+    <!-- Links and Scripts -->
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-color: #3a0ca3;
+            height: 100%;
+            margin: 0;
+        }
+
+        .wrapper {
+            display: grid;
+            height: 100%;
+            grid-template-rows: 10rem 25rem;
+            align-items: center;
+            justify-items: center;
+        }       
+
+        h1 {
+            font-size: 4rem;
+            color: #4cc9f0;
+        }
+
+        main div {
+            font-size: 8rem;
+            color: #f72585;
+            margin-bottom: 5rem;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: 8rem 8rem 9rem;
+            justify-content: center;
+            list-style-type: none;
+            padding-left: 0
+        }
+
+        button {
+            background-color: transparent;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4cc9f0;
+            border: solid 0.15rem #4cc9f0;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+        }
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3.5rem;
+            }  
+            main div {
+                font-size: 5rem;
+            }
+            ul {
+                grid-template-columns: 6rem 6rem 7rem;
+            }
+            button {
+                font-size: 1.1rem;
+            }
+        }
+ 
+    </style>
+    
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <center>
+                <h1>Stopwatch</h1>
+            </center>
+        </header>
+        <main>
+            <center>
+                <div id="watch">00:00:00</div>
+            </center>
+            <center>
+                <ul>
+                    <li><button onclick="startWatchBtn();">Start</button></li>
+                    <li><button onclick="stopWatchBtn();">Stop</button></li>
+                    <li><button onclick="resetWatchBtn();">Reset</button></li>
+                </ul>
+            </center>
+        </main>
+    </div>
+
+    <script src="stopwatch.js"></script>
+
+</body>
+</html>
