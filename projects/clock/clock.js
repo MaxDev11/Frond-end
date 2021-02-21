@@ -1,26 +1,19 @@
 function currentTime() {
-    let time = new Date();
+  const clock = document.querySelector("#clock");
+        time = new Date();
+  
+  let hours = time.getHours(),
+      minutes = time.getMinutes(),
+      seconds = time.getSeconds();
+  let h = checkTimeDecimal(hours),
+      m = checkTimeDecimal(minutes),
+      s = checkTimeDecimal(seconds);
 
-    let hours = time.getHours(),
-        minutes = time.getMinutes(),
-        seconds = time.getSeconds();
-    
-    let h = checkTimeDecimal(hours),
-        m = checkTimeDecimal(minutes),
-        s = checkTimeDecimal(seconds);
-
-    document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+  clock.innerHTML = h + ":" + m + ":" + s;
 }
 
-function checkTimeDecimal(k) {
-    if (k < 10) {
-      return "0" + k;
-    }
-    else {
-      return k;
-    }
-  }
+const checkTimeDecimal = (k) => k < 10 ? "0" + k : k;
 
-  window.setInterval(currentTime, 1000);
+window.setInterval(currentTime, 1000);
 
 
