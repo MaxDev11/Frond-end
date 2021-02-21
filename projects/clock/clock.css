@@ -1,0 +1,49 @@
+@font-face{
+    font-family:'digital-7';
+    src: url('digital_7.ttf');
+}       
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #10002b;
+    height: 100%;
+    margin: 0;
+    font-family: 'digital-7';
+}
+
+main {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    cursor:crosshair;
+}       
+
+p {
+    font-size: 12rem;
+    letter-spacing: 0.5rem;
+    color: #9d4edd;
+    height: 9rem;
+    opacity: 0.8;
+    text-shadow: 0 0 10rem #c77dff;
+}
+
+p:hover {
+    opacity: 1;
+    transition: all 1s;
+    text-shadow: 0 0 1rem #c77dff;
+}
+
+@media (max-width: 580px) {
+    p {
+        font-size: 6rem;
+        height: 4.5rem;
+        text-shadow: 0 0 3rem #c77dff;
+    }
+    p:hover {
+        text-shadow: 0 0 0.5rem #c77dff;
+    }
+}

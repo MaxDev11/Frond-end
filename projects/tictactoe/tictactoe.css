@@ -1,0 +1,64 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #7F5539;
+    height: 100%;
+    margin: 0;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+.wrapper {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}   
+
+h1 {
+    font-size: 5rem;
+    color: #EDE0D4;
+    letter-spacing: 0.5rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 8rem 8rem 8rem;
+    grid-gap: 0.3rem;
+}
+
+.square {
+    display: grid;
+    background-color: #9C6644;
+    color: #EDE0D4;
+    font-size: 4rem;
+    font-weight: bold;
+    height: 9rem;
+    border-radius: 0.5rem;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.square:hover {
+    opacity: 0.7;
+}
+
+.square:active {
+    opacity: 0.5;
+}
+
+footer {
+    color: #E6CCB2;
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 3rem; }
+    main { grid-template-columns: 5rem 5rem 5rem; }
+    .square { 
+        font-size: 2.5rem;
+        height: 6rem; 
+    }
+}
