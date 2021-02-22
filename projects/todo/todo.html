@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta and Title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="id=edge">
+    <meta name="author" content="Max">
+    <meta name="description" context="Created ToDo l for JS practice">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Front-end, ToDo">
+    <title>ToDo</title>
+
+    <!-- Links and Scripts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="todo.css">
+    
+</head>
+<body>
+
+    <div class="wrapper">
+       <header>
+            <h1>ToDo</h1>
+       </header>
+       <main>
+            <section>
+                <input type="text" id="input" placeholder="Type in the task" maxlength="20">
+                <button id="add-btn" onclick="addTask();">Add</button>
+            </section>
+            <ul id="todoList"></ul>
+       </main>
+    </div>
+
+    <script src="todo.js"></script>
+
+</body>
+</html>

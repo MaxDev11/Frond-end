@@ -1,6 +1,6 @@
 // Variables
 
-let time = document.getElementById("watch");
+const time = document.getElementById("watch");
 
 let hours = 0, 
     minutes = 0, 

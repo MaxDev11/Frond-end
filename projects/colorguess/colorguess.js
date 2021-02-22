@@ -40,7 +40,7 @@ function chooseColor() {
 }
 
 function genColors(n) {
-	var arr = [];
+	let arr = [];
 
 	for (var i = 0; i < n; i++) {
 		arr.push(makeColor());
