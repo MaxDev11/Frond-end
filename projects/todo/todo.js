@@ -1,4 +1,4 @@
-const list = document.querySelector("#todoList");
+let list = document.querySelector("#todoList");
 let typeIn = document.querySelector("#input");
 
 let addTask = () => {

@@ -1,5 +1,5 @@
 function currentTime() {
-  const clock = document.querySelector("#clock");
+  const clock = document.querySelector("#clock"),
         time = new Date();
   
   let hours = time.getHours(),

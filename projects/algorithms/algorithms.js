@@ -2,31 +2,23 @@
 
 // Factorial
 
-function computeFactorial() {
-    let factorialInput = +(prompt("https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/factorial", 
-                                  "Enter the factorial"));
+let computeFactorial = () => {
+    let factorialInput = +(document.querySelector("#factorial").value);
     let factorialOutput = 1;
+    let facOutput = document.querySelector("#fac_output");
 
     for (let i = 2; i <= factorialInput; i++) {
         factorialOutput *= i;
     }
     
-    alert("!" + factorialInput + " = " + factorialOutput.toString());
+    facOutput.innerText = "!" + factorialInput.toString() + " = " + factorialOutput.toString();
 }
-
-// Factorial (Recursive function)
-
-// function computeFactorialR(factorialInput) {
-//     return factorialInput > 1 ? 
-//         factorialInput * computeFactorialR(factorialInput - 1) : 
-//         1;
-// }
 
 // Fibonacci
 
-function computeFibonacci() {
-    let fibonacciInput = +(prompt("https://github.com/trekhleb/javascript-algorithms/tree/master/src/algorithms/math/fibonacci", 
-                                  "Enter the Fibonacci number"));
+let computeFibonacci = () => {
+    let fibonacciInput = +(document.querySelector("#fibonacci").value);
+    let fibOutput = document.querySelector("#fib_output");
     let fibonacciOutput = [0, 1];
     let cValue = 1, pValue = 0;
 
@@ -39,7 +31,7 @@ function computeFibonacci() {
         fibonacciOutput.push(cValue);
     }
 
-    alert("Fibonacci sequence: " + fibonacciOutput);
+    fibOutput.innerText = "Fibonacci sequence: " + fibonacciOutput.toString();
 }
 
 // Prime Factors

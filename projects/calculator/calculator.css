@@ -22,8 +22,8 @@ h1 {
     color: #55A630;
 }
 
-/* Table elements */
-table {
+/* Main elements */
+main {
     display: grid;
 }
 
@@ -34,35 +34,37 @@ table {
     font-weight: bold;
     color: #55A630;
     background-color: black;
-    border: solid 2px #55A630;
+    border: solid 2px #2B9348;
     padding: 1rem;
 }
 
-#second_row td input,
-#third_row td input,
-#fourth_row td input,
-#firstCol, #secondCol, #thirdCol, #fourthCol {
-    width: 3.6rem;
+#second_row input,
+#third_row input,
+#fourth_row input,
+#fifth_row input {
+    width: 3.665rem;
     height: 4.2rem;
     font-size: 1.2rem;
     font-weight: bold;
     color: #2B9348;
     background-color: black;
     border: solid 2px #2B9348;
+    margin-bottom: 0.15rem;
 }
 
 #solve {
     width: 7.6rem;
     height: 4.2rem;
-    font-size: 2.4rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     color: #CAF0F8;
     background-color: #55A630;
     border: none;
 }
 
-#second_row td input:hover,
-#third_row td input:hover,
-#fourth_row td input:hover,
+#second_row input:hover,
+#third_row input:hover,
+#fourth_row input:hover,
 #firstCol:hover, #secondCol:hover, 
 #thirdCol:hover, #fourthCol:hover {
     opacity: 0.8;
@@ -93,11 +95,11 @@ table {
         font-size: 1.2rem;
     }
     
-    #second_row td input,
-    #third_row td input,
-    #fourth_row td input,
-    #firstCol, #secondCol, #thirdCol, #fourthCol {
-        width: 2rem;
+    #second_row input,
+    #third_row input,
+    #fourth_row input,
+    #fifth_row input {
+        width: 2.03rem;
         height: 3rem;
         font-size: 0.7rem;
     }
@@ -105,6 +107,6 @@ table {
     #solve {
         width: 4.3rem;
         height: 3rem;
-        font-size: 1.6rem;
+        font-size: 0.7rem;
     }
 }

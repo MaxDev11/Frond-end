@@ -32,29 +32,21 @@ function stopWatch() {
 
     }
 
-    if (seconds < 10) {
-        displaySeconds = "0" + seconds.toString();
-    } else {
-        displaySeconds = seconds;
-    }
-
-    if (minutes < 10) {
-        displayMinutes = "0" + minutes.toString();
-    } else {
-        displayMinutes = minutes;
-    }
-
-    if (hours < 10) {
-        displayHours = "0" + hours.toString();
-    } else {
-        displayHours = hours;
-    }
+    seconds < 10 ? 
+                displaySeconds = "0" + seconds.toString() : 
+                displaySeconds = seconds;
+    minutes < 10 ? 
+                displayMinutes = "0" + minutes.toString() : 
+                displayMinutes = minutes;
+    hours < 10 ? 
+                displayHours = "0" + hours.toString() : 
+                displayHours = hours;
 
     time.innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
 
 }
 
-// Button functions
+// Other functions
 
 function startWatchBtn() {
     if(status === "stopped") {

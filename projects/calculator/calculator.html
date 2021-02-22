@@ -24,42 +24,40 @@
             <h1>Calculator</h1>
         </header>
         <main>
-            <table>
-                <tr id="first_row">
-                    <td colspan="6"><input type="text" id="result" disabled></td> 
-                </tr>
-                <tr id="second_row">
-                    <td><input type="button" value="7" onclick="typeChar('7');"></td>
-                    <td><input type="button" value="8" onclick="typeChar('8');"></td>
-                    <td><input type="button" value="9" onclick="typeChar('9');"></td>
-                    <td><input type="button" value="/" onclick="typeChar('/');"></td>
-                    <td><input type="button" value="B" onclick="removeChar();"></td>
-                    <td><input type="button" value="C" onclick="clearInput();"></td>
-                </tr>
-                <tr id="third_row">
-                    <td><input type="button" value="4" onclick="typeChar('4');"></td>
-                    <td><input type="button" value="5" onclick="typeChar('5');"></td>
-                    <td><input type="button" value="6" onclick="typeChar('6');"></td>
-                    <td><input type="button" value="*" onclick="typeChar('*');"></td>
-                    <td><input type="button" value="(" onclick="typeChar('(');"></td>
-                    <td><input type="button" value=")" onclick="typeChar(')');"></td>
-                </tr>
-                <tr id="fourth_row">
-                    <td><input type="button" value="1" onclick="typeChar('1');"></td>
-                    <td><input type="button" value="2" onclick="typeChar('2');"></td>
-                    <td><input type="button" value="3" onclick="typeChar('3');"></td>
-                    <td><input type="button" value="-" onclick="typeChar('-');"></td>
-                    <td><input type="button" value="sqr" onclick="square();"></td>
-                    <td><input type="button" value="sqrt" onclick="squareRoot();"></td>
-                </tr>
-                 <tr id="fifth_row">
-                    <td><input type="button" value="0" id="firstCol" onclick="typeChar('0')"></td>
-                    <td><input type="button" value="." id="secondCol" onclick="typeChar('.')"></td>
-                    <td><input type="button" value="%" id="thirdCol" onclick="typeChar('%')"></td>
-                    <td><input type="button" value="+" id="fourthCol" onclick="typeChar('+')"></td>
-                    <td colspan="2"><input type="button" value="=" id="solve" onclick="compute();"></td>
-                </tr>
-            </table>
+            <section id="first_row">
+                <input type="text" id="result" disabled>
+            </section>
+            <section id="second_row">
+                <input type="button" value="7" onclick="typeChar('7');">
+                <input type="button" value="8" onclick="typeChar('8');">
+                <input type="button" value="9" onclick="typeChar('9');">
+                <input type="button" value="/" onclick="typeChar('/');">
+                <input type="button" value="B" onclick="removeChar();">
+                <input type="button" value="C" onclick="clearInput();">
+            </section>
+            <section id="third_row">
+                <td><input type="button" value="4" onclick="typeChar('4');">
+                <td><input type="button" value="5" onclick="typeChar('5');">
+                <td><input type="button" value="6" onclick="typeChar('6');">
+                <td><input type="button" value="*" onclick="typeChar('*');">
+                <td><input type="button" value="(" onclick="typeChar('(');">
+                <td><input type="button" value=")" onclick="typeChar(')');">
+            </section>
+            <section id="fourth_row">
+                <td><input type="button" value="1" onclick="typeChar('1');">
+                <td><input type="button" value="2" onclick="typeChar('2');">
+                <td><input type="button" value="3" onclick="typeChar('3');">
+                <td><input type="button" value="-" onclick="typeChar('-');">
+                <td><input type="button" value="sqr" onclick="square();">
+                <td><input type="button" value="sqrt" onclick="squareRoot();">
+            </section>
+            <section id="fifth_row">
+                <input type="button" value="0" onclick="typeChar('0')">
+                <input type="button" value="." onclick="typeChar('.')">
+                <input type="button" value="%" onclick="typeChar('%')">
+                <input type="button" value="+" onclick="typeChar('+')">
+                <button id="solve" onclick="compute();">Compute</button>
+            </section>
         </main>
     </div>
     
