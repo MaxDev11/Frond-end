@@ -16,7 +16,9 @@ class Bill {
               energyUsed = (this.power / 1000) * this.time,
               costEU = energyUsed * this.cost;
 
-        result.value = energyUsed + " kWh * " + this.cost + " c/kWh = " + costEU + "c.";
+        result.value = "Cost of energy use: " + energyUsed 
+                        + " kWh * " + this.cost 
+                        + " c/kWh = " + costEU + "c.";
     }
 
     static reset() {
