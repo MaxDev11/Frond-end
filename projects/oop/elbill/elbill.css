@@ -1,0 +1,19 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #023047;
+    color: #8ECAE6;
+}
+h1 { color: #8ECAE6; }
+main {
+    background-color: #219EBC;
+    color: #023047;
+}
+#rlabel { color: black; }
+#submit { 
+    color: white;
+    background-color: #FFB703;
+}
+@media (min-width: 1080px) {
+    body { margin-left:20rem; 
+           margin-right: 20rem;}
+}
