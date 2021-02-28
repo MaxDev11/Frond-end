@@ -1,0 +1,35 @@
+body {
+    background-color: #0D0C1D;
+    color: #F1DAC4;
+    font-family: 'Roboto', sans-serif;
+}
+h1 { 
+    font-size: 4rem; 
+    font-weight: bold;
+}
+.cellCol {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #0D0C1D;
+    background-color: #474973;
+    border: solid 0.3rem #0D0C1D;
+    cursor: pointer;
+}
+.cellCol:hover { opacity: 0.7; }
+.btn { 
+    background-color: #474973;
+    border: none;
+    transition: all 1s;
+    font-weight: bold;
+}
+.btn:hover, 
+.btn:focus {
+    background-color: #161B33;
+    border: none;
+    outline: none;
+}
