@@ -1,6 +1,6 @@
 function currentTime() {
-  const clock = document.querySelector("#clock"),
-        time = new Date();
+  let clock = document.querySelector("#clock"),
+      time = new Date();
   
   let hours = time.getHours(),
       minutes = time.getMinutes(),
