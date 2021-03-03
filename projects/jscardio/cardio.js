@@ -1,47 +1,45 @@
-const output = (o) => console.log(o);
+const show = (o) => console.log(o);
 
 
 /* FIRST CARDIO SESSION (Traversy media JS cardio sessions) */
 
 
-const reverseString = (s) => s.split('')
-                              .reduce((acc, x) => [x, ...acc], []);
+// Task 1
+const reverseStr = (s) => s.toString().split('')
+                              .reduce((acc, x) => [x, ...acc], []).join('');
 
-function isPalindrome(str) {
-    return str.split('').reverse().join('') === str ? 
-           output('true') : output('false');
-}
+// Task 2
+const isPalindrome = (s) => reverseStr(s) === s;
 
-function reverseInt(int) {
-    const s = int.toString().split('').reverse().join('');
-    return parseInt(s) * Math.sign(int);
-}
+// Task 3
+const reverseInt = (i) => parseInt(reverseStr(i)) * Math.sign(i);
 
-function capitalizeLetters(str) {
-    return str.toLowerCase()
-              .split(' ')
-              .map((e) => e[0].toUpperCase() 
-                        + e.substring(1))
-              .join(' ');    
-}
+// Task 4
+const capLetters = (s) => s.toLowerCase().split(' ')
+                           .map((e) => e[0].toUpperCase() 
+                                + e.substring(1)).join(' ');  
 
-function commonChar(str) {
-    let chMap = {},
-          maxN = 0, maxCh = '';
+// Task 5
+const commonChar = (s) => {
+    let cMap = {},
+        maxN = 0, 
+        maxC = '';
 
-    str.split('').map((ch) => chMap[ch] ? chMap[ch]++ : chMap[ch] = 1);
+    s.split('')
+     .map((c) => cMap[c] ? cMap[c]++ : cMap[c] = 1);
 
-    for (let ch in chMap) {
-        if (chMap[ch] > maxN) {
-            maxN = chMap[ch];
-            maxCh = ch;
+    for (let c in cMap) {
+        if (cMap[c] > maxN) {
+            maxN = cMap[c];
+            maxC = c;
         }
     }
 
-    return maxCh;
-}
+    return maxC;
+};
 
-function fizzBuzz(a) {
+// Task 6
+const fizzBuzz = (a) => {
     a.map((e) => {
         return e % 15 === 0 ? 'FizzBuzz' :
                e % 3 === 0 ? 'Fizz' :
@@ -53,64 +51,58 @@ function fizzBuzz(a) {
 /* SECOND CARDIO SESSION (Traversy media JS cardio sessions) */
 
 
-function longestWord(s) {
-    const words = s.toLowerCase().match(/[a-z0-9]+/g);
-    const sorted = words.sort((a, b) => b.length - a.length);
-    const longestWord = sorted.filter((word) => {
-        return word.length === sorted[0].length;
-    });
+// Task 1
+const matchWords = (w) => w.toLowerCase().match(/[a-z0-9]+/g);
+const sortWords = (w) => matchWords(w).sort((a, b) => b.length - a.length);
+const filterWords = (w) => w.filter((e) => e.length === w[0].length);
 
-    return longestWord.length === 1 ? longestWord[0] : longestWord;
-}
+const longestWord = (s) => filterWords(sortWords(s)).join(', ');
 
-function chunkArray(arr, len) {
-    const chunkedArr = [];
-    let i = 0;
-    while (i < arr.length) {
-        chunkedArr.push(arr.slice(i, i + len));
-        i += len;
+// Task2
+const chunkArray = (a, l) => {
+    let chunked = [];
+    
+    for (let i = 0; i < a.length; i += l) {
+        chunked.push(a.slice(i, i + l));
     }
 
-    return chunkedArr;
+    return chunked;
 }
 
-const flatten2D = (a) => a.map((e) => e.join(''))
-                          .join('').split('');
+// Task 3
+const flattenArray = (a) => a.map((e) => e.flat()).join(',').split(',');
+                  
+// Task 4
+const formatS = (s) => s.replace(/[^\w]/g, '').toLowerCase()
+                        .split('').sort().join('');
 
-const flattenINF = (a) => a.map((e) => e.flat())
-                           .join(',').split(',');
-                    
-function isAnagram(s1, s2) {
-    return formatStr(s1) === formatStr(s2);
-}
-function formatStr(str) {
-    return str.replace(/[^\w]/g, '').toLowerCase().split('')
-              .sort().join('');
-}
+const isAnagram = (s1, s2) => formatS(s1) === formatS(s2);
 
-function letterChanges(s) {
-    let newStr = s.replace(/[a-z]/gi, (ch) => {
-        if (ch === 'z' || ch === 'Z') {
-            return 'a';
-        } else {
-            return String.fromCharCode(ch.charCodeAt() + 1);
-        }
-    });
+// Task 5
+const checkLastCh = (c) => c === 'z' || c === 'Z' ? 'a' 
+                            : String.fromCharCode(c.charCodeAt() + 1);
+const replaceLetters = (s) => s.replace(/[a-z]/gi, (c) => checkLastCh(c));
+const vowsToUpperCase = (s) => s.replace(/a|e|i|o|u/gi, (v) => v.toUpperCase());
 
-    newStr = newStr.replace(/a|e|i|o|u/gi, (vow) => {
-        return vow.toUpperCase();
-    });
-
-    return newStr;
-}
+const letterChanges = (s) => vowsToUpperCase(replaceLetters(s));
 
 
 /* THIRD CARDIO SESSION (Traversy media JS cardio sessions) */
 
 
+// Task 1
 const addAllP = (...n) => n.reduce((acc, cur) => acc + cur);
 
-function sumAllPrimes(n) {
+// Task 2
+const checkPrime = (i) => {
+    for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+            return false;
+        }
+    }    
+    return true;
+};
+const sumAllPrimes = (n) => {
     let sum = 0;
 
     for (let i = 2; i < n; i++) {
@@ -119,61 +111,41 @@ function sumAllPrimes(n) {
         }
     }
     return sum;
-}
-function checkPrime(i) {
-    for (let j = 2; j < i; j++) {
-        if (i % j === 0) {
-            return false;
-        }
-    }    
-    return true;
-}
+};
 
-function seekAndDestroy(arr, ...rest) {
-    return arr.filter(val => !rest.includes(val));
-}
+// Task 3
+const seekAndDestroy = (arr, ...rest) => arr.filter(v => !rest.includes(v));
 
-function sortByHeihgt(a) {
-    const arr1 = [];
-    const arr2 = [];
+// Task 4
+const sortByHeihgt = (a) => {
+    const a1 = [], a2 = [];
+    
+    a.forEach((v, i) => v === -1 ? a1.push(i) : a2.push(v));
+    const sortA = a2.sort((a, b) => a - b);
+    a1.forEach((val, i) => sortA.splice(a1[i], 0, -1));
 
-    a.forEach((val, i) => {
-        if (val === -1) {
-            arr1.push(i)
-        } else {
-            arr2.push(val);
-        }
-    });
-
-    const sortArr = arr2.sort((a, b) => a - b);
-
-    arr1.forEach((val, i) => sortArr.splice(arr1[i], 0, -1));
-
-    return sortArr;
+    return sortA;
 }
 
-function missingLetters(s) {
-    let compare = s.charCodeAt(0);
-    let missing;
+// Task 5
+const missingLetters = (s) => {
+    let compare = s.charCodeAt(0),
+        missing;
 
-    s.split('').map((ch, i) => {
-        if (s.charCodeAt(i) == compare) {
-            ++compare;
-        } else {
+    s.split('').map((c, i) => {
+        s.charCodeAt(i) == compare ?
+            ++compare :
             missing = String.fromCharCode(compare);
-        }
     });
 
     return missing;
-}
+};
 
-function evenOddSums(arr) {
-    let evenSum = 0;
-    let oddSum = 0;
-
-    arr.forEach(num => (num % 2 === 0 ? (evenSum += num) : (oddSum += num)));
-
+// Task 6
+const evenOddSums = (a) => {
+    let evenSum = 0, oddSum = 0;
+    a.forEach(num => (num % 2 === 0 
+                        ? (evenSum += num) 
+                        : (oddSum += num)));
     return [evenSum, oddSum];
-}
-
-output(evenOddSums([50, 60, 60, 45, 71]));
+};
