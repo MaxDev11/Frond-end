@@ -63,7 +63,6 @@ function longestWord(s) {
     return longestWord.length === 1 ? longestWord[0] : longestWord;
 }
 
-// ex chunkArray([1, 2, 3, 4, 5, 6], 2) === [[1, 2, 3], [4, 5, 6]]
 function chunkArray(arr, len) {
     const chunkedArr = [];
     let i = 0;
@@ -104,3 +103,77 @@ function letterChanges(s) {
 
     return newStr;
 }
+
+
+/* THIRD CARDIO SESSION (Traversy media JS cardio sessions) */
+
+
+const addAllP = (...n) => n.reduce((acc, cur) => acc + cur);
+
+function sumAllPrimes(n) {
+    let sum = 0;
+
+    for (let i = 2; i < n; i++) {
+        if (checkPrime(i)) {
+            sum += i;
+        }
+    }
+    return sum;
+}
+function checkPrime(i) {
+    for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+            return false;
+        }
+    }    
+    return true;
+}
+
+function seekAndDestroy(arr, ...rest) {
+    return arr.filter(val => !rest.includes(val));
+}
+
+function sortByHeihgt(a) {
+    const arr1 = [];
+    const arr2 = [];
+
+    a.forEach((val, i) => {
+        if (val === -1) {
+            arr1.push(i)
+        } else {
+            arr2.push(val);
+        }
+    });
+
+    const sortArr = arr2.sort((a, b) => a - b);
+
+    arr1.forEach((val, i) => sortArr.splice(arr1[i], 0, -1));
+
+    return sortArr;
+}
+
+function missingLetters(s) {
+    let compare = s.charCodeAt(0);
+    let missing;
+
+    s.split('').map((ch, i) => {
+        if (s.charCodeAt(i) == compare) {
+            ++compare;
+        } else {
+            missing = String.fromCharCode(compare);
+        }
+    });
+
+    return missing;
+}
+
+function evenOddSums(arr) {
+    let evenSum = 0;
+    let oddSum = 0;
+
+    arr.forEach(num => (num % 2 === 0 ? (evenSum += num) : (oddSum += num)));
+
+    return [evenSum, oddSum];
+}
+
+output(evenOddSums([50, 60, 60, 45, 71]));
