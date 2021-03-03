@@ -6,7 +6,7 @@ const show = (o) => console.log(o);
 
 // Task 1
 const reverseStr = (s) => s.toString().split('')
-                              .reduce((acc, x) => [x, ...acc], []).join('');
+                           .reduce((acc, x) => [x, ...acc], []).join('');
 
 // Task 2
 const isPalindrome = (s) => reverseStr(s) === s;
@@ -17,7 +17,7 @@ const reverseInt = (i) => parseInt(reverseStr(i)) * Math.sign(i);
 // Task 4
 const capLetters = (s) => s.toLowerCase().split(' ')
                            .map((e) => e[0].toUpperCase() 
-                                + e.substring(1)).join(' ');  
+                                     + e.substring(1)).join(' ');  
 
 // Task 5
 const commonChar = (s) => {
@@ -117,7 +117,7 @@ const sumAllPrimes = (n) => {
 const seekAndDestroy = (arr, ...rest) => arr.filter(v => !rest.includes(v));
 
 // Task 4
-const sortByHeihgt = (a) => {
+const sortByHeight = (a) => {
     const a1 = [], a2 = [];
     
     a.forEach((v, i) => v === -1 ? a1.push(i) : a2.push(v));
