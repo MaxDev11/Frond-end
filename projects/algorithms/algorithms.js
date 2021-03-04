@@ -1,10 +1,10 @@
-// Source repository: https://github.com/trekhleb/javascript-algorithms
+ // Source repository: https://github.com/trekhleb/javascript-algorithms
 
 const d = document;
 
 // Factorial
 
-let computeFactorial = () => {
+const computeFactorial = () => {
     let factorialInput = +(d.querySelector("#factorial").value);
     let factorialOutput = 1;
     let facOutput = d.querySelector("#fac_output");
@@ -14,11 +14,11 @@ let computeFactorial = () => {
     }
     
     facOutput.innerText = "!" + factorialInput.toString() + " = " + factorialOutput.toString();
-}
+};
 
 // Fibonacci
 
-let computeFibonacci = () => {
+const computeFibonacci = () => {
     let fibonacciInput = +(d.querySelector("#fibonacci").value);
     let fibOutput = d.querySelector("#fib_output");
     let fibonacciOutput = [0, 1];
@@ -34,15 +34,15 @@ let computeFibonacci = () => {
     }
 
     fibOutput.innerText = "Fibonacci sequence: " + fibonacciOutput.toString();
-}
+};
 
 // Prime Factors
 
-function computePrimeF() {
+const computePrimeF = () => {
     let primeFInput = +(d.querySelector("#primef"));
     let primeFOutput = [];
 
     if (primeFInput < 2) primeFOutput.push(0);
 
     
-}
+};

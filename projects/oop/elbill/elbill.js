@@ -1,42 +1,36 @@
-// Energy = Power * Time.
-// Cost of energy use = Energy used * Cost per unit of energy.
-// Cost of energy use = n kWh * n c/kWh
-
-const d = document;
+const select = (s) => document.querySelector(s);
+const p = '#power', t = '#time',
+      c = '#cost', r = '#result';
 
 class Bill {
-    constructor(power, time, cost) {
-        this.power = power;
-        this.time = time;
-        this.cost = cost;
+    constructor(p, t, c) {
+        this.p = p;
+        this.t = t;
+        this.c = c;
     }
 
     calculate() {
-        const result = d.querySelector('#result'),
-              energyUsed = (this.power / 1000) * this.time,
-              costEU = energyUsed * this.cost;
+        const result = select(r),
+              energyUsed = (this.p / 1000) * this.t,
+              costEU = energyUsed * this.c;
 
         result.value = "Cost of energy use: " + energyUsed 
-                        + " kWh * " + this.cost 
+                        + " kWh * " + this.c 
                         + " c/kWh = " + costEU + "c.";
     }
 
     static reset() {
-        d.querySelector('#power').value = "";
-        d.querySelector('#time').value = "";
-        d.querySelector('#cost').value = "";
+        select(p).value = "";
+        select(t).value = "";
+        select(c).value = "";
     }
 }
 
-d.querySelector('#submit').addEventListener('click', (e) => {
+select('#submit').addEventListener('click', (e) => {
     e.preventDefault();
-    
-    const power =  d.querySelector('#power').value,
-          time = d.querySelector('#time').value,
-          cost = d.querySelector('#cost').value;
 
-    const bill = new Bill(power, time, cost);
+    const bill = new Bill(select(p).value, select(t).value, select(c).value);
     bill.calculate();
 });
 
-d.querySelector('#reset').addEventListener('click', () => Bill.reset());
+select('#reset').addEventListener('click', () => Bill.reset());

@@ -1,45 +1,37 @@
 // Variables
 
-const d = document;
-const displayColor = d.getElementById("color");
-const squares = d.querySelectorAll(".square");
-let colors = [];
-let pickedColor;
+const displayColor = document.getElementById("color");
+const squares = document.querySelectorAll(".square");
+let colors = [], pickedColor;
 
 // Functions
 
 const newColor = () => {
     colors = genColors(6);
-    pickedColor = chooseColor();
+    pickedColor = chooseColor(colors);
     displayColor.innerHTML = pickedColor;
     
+    displayColors(colors);
     for (let i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = colors[i];
-        
         squares[i].addEventListener("click", () => {      
             let clickedColor = squares[i].style.backgroundColor;
             
-            if (clickedColor == pickedColor) {
-                changeColors(clickedColor);
-            } else {
-                squares[i].style.backgroundColor = "#403D39";
-            }
+            clickedColor == pickedColor ? 
+            changeColors(clickedColor) :
+            bgColor(squares[i], '#403D39');
         });
     }
 }
-const rand = (n) => Math.floor(Math.random() * n)
-const changeColors = (color) => squares.forEach(e => e.style.backgroundColor = color);
-const chooseColor = () => colors[rand(colors.length)];
-const genColors = (n) => {
-    let arr = [];
-    
-	// for (let i = 0; i < n; i++) {
-	// 	arr.push(makeColor());
-	// }
 
-    return arr.map((e) => e < n ? arr.push(makeColor()) : null);
-
-	// arr.reduce((n) => arr.push(makeColor()), 0);
-}
-const makeColor = () => "rgb(" + rand(256) + ", " + 
-                        rand(256) + ", " + rand(256) + ")";
+const bgColor = (e, v) => e.style.backgroundColor = v;
+const displayColors = (c) => squares.forEach((e, i) => bgColor(e, c[i]));
+const getRandom = (n) => Math.floor(Math.random() * n);
+const genColors = (n) => { 
+    let arr = []; 
+	for (let i = 0; i < n; i++) arr.push(makeColor());
+    return arr;
+};
+const changeColors = (c) => squares.forEach(e => bgColor(e, c));
+const chooseColor = (colors) => colors[getRandom(colors.length)];
+const makeColor = () => "rgb(" + getRandom(256) + ", " + 
+                        getRandom(256) + ", " + getRandom(256) + ")";

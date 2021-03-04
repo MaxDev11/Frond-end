@@ -91,7 +91,7 @@ const letterChanges = (s) => vowsToUpperCase(replaceLetters(s));
 
 
 // Task 1
-const addAllP = (...n) => n.reduce((acc, cur) => acc + cur);
+const addAllP = (...n) => n.reduce((acc, cur) => acc + cur, 0);
 
 // Task 2
 const checkPrime = (i) => {

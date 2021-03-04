@@ -4,9 +4,8 @@ const time = document.getElementById("watch");
 
 let hours = 0, 
     minutes = 0, 
-    seconds = 0;
-
-let displayHours = 0,
+    seconds = 0,
+    displayHours = 0,
     displayMinutes = 0,
     displaySeconds = 0;
 

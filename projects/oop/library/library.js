@@ -1,11 +1,9 @@
-// Global Variables
 
-const d = document;
+const select = (s) => document.querySelector(s);
 const ls = localStorage;
+const tt = '#title', a = '#author', t = "#type",
+      i = '#isbn', l = '#list', f = '#form';
 
-// Classes
-
-// Book
 class Book {
     constructor(title, author, type, isbn) {
        this.title = title;
@@ -15,7 +13,6 @@ class Book {
     }
 }
 
-// UI
 class UI {
     static displayBooks() {
         const books = Store.getBooks();
@@ -24,8 +21,8 @@ class UI {
     }
 
     static addBook(book) {
-        const list = d.querySelector('#list');
-        const row = d.createElement('tr');
+        const list = select(l);
+        const row = document.createElement('tr');
 
         row.innerHTML = `
             <td>${book.title}</td>
@@ -45,26 +42,25 @@ class UI {
     }
 
     static showAlert(msg, className) {
-        const div = d.createElement('div');
+        const div = document.createElement('div');
         div.style.fontSize = '1.4rem';
         div.className = `alert alert-${className}`;
-        div.appendChild(d.createTextNode(msg));
-        const main = d.querySelector('.main'),
-              form = d.querySelector('#form');
+        div.appendChild(document.createTextNode(msg));
+        const main = select('.main'),
+              form = select(f);
 
         main.insertBefore(div, form);
 
-        setTimeout(() => d.querySelector('.alert').remove(), 4000);
+        setTimeout(() => select('.alert').remove(), 4000);
     }
 
     static clearFields() {
-        d.querySelector('#title').value = "";
-        d.querySelector('#author').value = "";
-        d.querySelector('#isbn').value = "";
+        select(tt).value = "";
+        select(a).value = "";
+        select(i).value = "";
     }
 }
 
-// Store
 class Store {
     static getBooks() {
         let books;
@@ -96,19 +92,15 @@ class Store {
     }
 }
 
-// Event Listeners
+document.addEventListener('DOMContentLoaded', UI.displayBooks);
 
-// Load content
-d.addEventListener('DOMContentLoaded', UI.displayBooks);
-
-// Add Book
-d.querySelector('#form').addEventListener('submit', (e) => {
+select(f).addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const title = d.querySelector('#title').value,
-          author = d.querySelector('#author').value,
-          type = d.querySelector('#type').value,
-          isbn = d.querySelector('#isbn').value;
+    const title = select(tt).value,
+          author = select(a).value,
+          type = select(t).value,
+          isbn = select(i).value;
 
     if (title === '' || author === '' || isbn === '') {
         UI.showAlert('FILL THE FUCKING FIELDS!!!', 'danger');
@@ -123,7 +115,7 @@ d.querySelector('#form').addEventListener('submit', (e) => {
 });
 
 // Remove book
-d.querySelector('#list').addEventListener('click', (e) => {
+select(l).addEventListener('click', (e) => {
     UI.removeBook(e.target);
     Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
     UI.showAlert('Book removed, are u happy now?', 'success');
