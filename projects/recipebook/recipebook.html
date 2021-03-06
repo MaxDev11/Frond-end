@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Max">
+    <meta name="description" context="Created RecipeBook for JS practice">
+    <meta name="keywords" content="HTML, TailwindCSS, JavaScript, Front-end, RecipeBook">
     <title>Recipe Book</title>
 
     <!-- Links and Scripts -->
@@ -15,9 +18,10 @@
 
 </head>
 
-<body class="font-sans h-full" style="font-family: 'Akaya Telivigala', cursive;">
+<body class="bg-yellow-100 font-sans" style="font-family: 'Akaya Telivigala', cursive;">
 
-    <div class="h-full">
+    <div>
+
         <!-- Header section -->
         <header class="flex justify-between items-center bg-yellow-100 px-6 py-4 lg:px-12">
             <div class="flex items-center">
@@ -32,74 +36,58 @@
                 </select>
             </div>
         </header>
+
         <!-- Hero section -->
-        <div class="bg-yellow-200 px-6 py-4 md:px-20 md:py-12 lg:px-72 2xl:px-96">
-            <form class="flex justify-between sm:flex flex-col">
+        <section class="bg-yellow-200 px-6 py-4 md:px-20 md:py-12 lg:px-72 2xl:px-96">
+            <form class="flex justify-between sm:flex flex-col form">
                 <div class="flex flex-col mb-2 lg:mb-6">
                     <label for="title" class="text-xl md:text-2xl 2xl:text-3xl mb-1">Title</label>
-                    <input type="text" id="title" maxlength="25" class="text-xl 2xl:text-2xl rounded px-3 py-2">
+                    <input type="text" id="title" minlength="5" maxlength="30"
+                        class="text-xl 2xl:text-2xl rounded px-3 py-2" required>
                 </div>
                 <div class="flex flex-col mb-4 lg:mb-6">
                     <label for="description" class="text-xl md:text-2xl 2xl:text-3xl mb-1">Description</label>
                     <textarea name="" id="description" rows="6" class="text-xl 2xl:text-2xl rounded px-3 py-2"
-                        style="resize: none;" maxlength="1000"></textarea>
+                        style="resize: none;" minlength="10" maxlength="1000" required></textarea>
                 </div>
                 <div class="mb-4">
-                    <button class="text-xl md:text-2xl 2xl:text-3xl underline rounded hover:opacity-80 ml-2"
-                        id="choose">Choose
-                        Image</button>
+                    <input type="file" accept="image/*" title="Only images are allowed"
+                        class="w-1/2 text-xl 2xl:text-2xl rounded hover:opacity-80 ml-2" id="choose" required>
+                    <img width="200" id="prevImg" class="mt-5 ml-2">
                 </div>
                 <div class="flex flex-row justify-center">
-                    <button
-                        class="text-xl md:text-2xl 2xl:text-3xl font-bold border-2 2xl:border-4 border-black rounded hover:opacity-80 px-10 py-2 mt-5"
-                        id="add">Add</button>
+                    <input type="submit" value="Add"
+                        class="bg-transparent text-xl md:text-2xl 2xl:text-3xl font-bold border-2 2xl:border-4 border-black rounded hover:opacity-80 px-10 py-2 mt-5"
+                        id="add">
                 </div>
             </form>
-        </div>
+        </section>
+
         <!-- Main Section -->
-        <div class="bg-yellow-100 h-full px-6 py-4 md:px-20 md:py-12 lg:px-52 2xl:px-72">
+        <section class="bg-yellow-100 h-full px-6 py-4 md:px-20 md:py-12 lg:px-52 2xl:px-72 main">
             <details class="mb-10">
                 <summary class="text-xl lg:text-2xl 2xl:text-3xl font-bold mt-4">
-                    First recipe
+                    First Recipe
                 </summary>
-                <div>
-                    <p class="text-xl lg:text-2xl 2xl:text-3xl text-center mt-5">Lorem, ipsum dolor sit amet consectetur
-                        adipisicing
-                        elit.
-                        Deleniti,
-                        tenetur aperiam
-                        molestiae
-                        consectetur inventore cupiditate repellat tempore excepturi rem corporis voluptatibus eaque
-                        cumque quibusdam veritatis fugit reiciendis, ullam, voluptas facilis!</p>
-                    <p class="flex justify-center"><img src="img/image.png" width="400" alt=""></p>
+                <div class="md:flex flex-row justify-between">
+                    <p
+                        class="md:flex md:flex-col md:justify-center md:w-1/2 text-xl lg:text-2xl 2xl:text-3xl text-center mt-5">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas reprehenderit totam doloremque
+                        tenetur facere ipsa consequatur recusandae dolorum, numquam fugit dolores exercitationem
+                        officiis harum quod beatae perferendis ipsam sit saepe.
+                    </p>
+                    <p class="flex justify-center md:w-1/2 md:flex-col lg:items-center pt-5 pl-5 pr-5"><img
+                            src="img/bookicon.png" width="400" alt="recipeImage"></p>
+                </div>
+                <div class="text-center">
+                    <button class="text-xl 2xl:text-2xl underline hover:opacity-80 mt-16" id="delete">Delete</button>
                 </div>
             </details>
-            <details class="mb-10">
-                <summary class="text-xl lg:text-2xl 2xl:text-3xl font-bold mt-4">
-                    Second recipe
-                </summary>
-                <div>
-                    <p class="text-xl lg:text-2xl 2xl:text-3xl text-center mt-5">Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Officia iste culpa optio accusamus beatae neque ducimus odio nulla
-                        voluptatibus modi perspiciatis rem consequuntur molestiae, sapiente eligendi quisquam architecto
-                        nihil nisi!
-                        cumque quibusdam veritatis fugit reiciendis, ullam, voluptas facilis!</p>
-                    <p class="flex justify-center"><img src="img/image.png" width="400" alt=""></p>
-                </div>
-            </details>
-            <details class="mb-10">
-                <summary class="text-xl lg:text-2xl 2xl:text-3xl font-bold mt-4">
-                    Third recipe
-                </summary>
-                <div>
-                    <p class="text-xl lg:text-2xl 2xl:text-3xl text-center mt-5">Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Cumque vitae odio dolorum consequuntur numquam eius nostrum quos culpa placeat
-                        iure deserunt quod error soluta aut mollitia, labore corrupti ut aperiam.</p>
-                    <p class="flex justify-center"><img src="img/image.png" width="400" alt=""></p>
-                </div>
-            </details>
-        </div>
+        </section>
+
     </div>
+
+    <script src="recipebook.js"></script>
 
 </body>
 
